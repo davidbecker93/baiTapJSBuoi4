@@ -1,0 +1,63 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    min-height: 100vh;
+    background: linear-gradient(to left, #dce35b, #45b649);
+}
+
+.nav-pills-custom .nav-link {
+    color: #aaa;
+    background: #fff;
+    position: relative;
+}
+
+.nav-pills-custom .nav-link.active {
+    color: #45b649;
+    background: #fff;
+}
+
+
+/* Add indicator arrow for the active tab */
+@media (min-width: 992px) {
+    .nav-pills-custom .nav-link::before {
+        content: '';
+        display: block;
+        border-top: 8px solid transparent;
+        border-left: 10px solid #fff;
+        border-bottom: 8px solid transparent;
+        position: absolute;
+        top: 50%;
+        right: -10px;
+        transform: translateY(-50%);
+        opacity: 0;
+    }
+}
+
+.nav-pills-custom .nav-link.active::before {
+    opacity: 1;
+
+}
+
+.nutbam {
+    border-radius: 25px;
+    letter-spacing: 1px;
+    box-shadow: 8px 8px 16px #d1d9e6, -8px -8px 16px #f9f9f9;
+    border: none;
+    outline: 0;
+    padding: 10px 40px;
+    transform: scale(1)
+}
+
+.nutbam:hover,
+.nutbam:focus {
+    box-shadow: 6px 6px 10px #d1d9e6, -6px -6px 10px #f9f9f9;
+    transform: scale(.985);
+    transition: .25s
+}

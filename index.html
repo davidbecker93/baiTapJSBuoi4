@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập JS buổi 4</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="py-2 header">
+        <div class="container py-4">
+            <header class="text-center mb-3 text-white">
+                <h1 class="display-4">BC35E - Bài Tập JS Buổi 4 - Lê Trọng Văn</h1>
+            </header>
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Tabs nav -->
+                    <div class="nav flex-column nav-pills nav-pills-custom" id="v-pills-tab" role="tablist"
+                        aria-orientation="vertical">
+                        <a class="nav-link mb-3 p-3 shadow active" id="v-pills-bai1-tab" data-toggle="pill"
+                            href="#v-pills-bai1" role="tab" aria-controls="v-pills-bai1" aria-selected="true">
+                            <i class="fa fa-user-circle-o mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP SỐ TĂNG DẦN</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai2-tab" data-toggle="pill"
+                            href="#v-pills-bai2" role="tab" aria-controls="v-pills-bai2" aria-selected="false">
+                            <i class="fa fa-calendar-minus-o mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP CHÀO HỎI</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai3-tab" data-toggle="pill"
+                            href="#v-pills-bai3" role="tab" aria-controls="v-pills-bai3" aria-selected="false">
+                            <i class="fa fa-star mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP ĐẾM SỐ CHẴN LẺ</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai4-tab" data-toggle="pill"
+                            href="#v-pills-bai4" role="tab" aria-controls="v-pills-bai4" aria-selected="false">
+                            <i class="fa fa-check mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase">BÀI TẬP ĐOÁN TAM GIÁC</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai5-tab" data-toggle="pill"
+                            href="#v-pills-bai5" role="tab" aria-controls="v-pills-bai5" aria-selected="false">
+                            <i class="fa fa-calculator mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase"> Tính ngày tháng năm</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai6-tab" data-toggle="pill"
+                            href="#v-pills-bai6" role="tab" aria-controls="v-pills-bai6" aria-selected="false">
+                            <i class="fa fa-calculator mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase"> Tính ngày</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai7-tab" data-toggle="pill"
+                            href="#v-pills-bai7" role="tab" aria-controls="v-pills-bai7" aria-selected="false">
+                            <i class="fa fa-apple mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase"> Đọc số</span></a>
+
+                        <a class="nav-link mb-3 p-3 shadow" id="v-pills-bai8-tab" data-toggle="pill"
+                            href="#v-pills-bai8" role="tab" aria-controls="v-pills-bai8" aria-selected="false">
+                            <i class="fa fa-address-card mr-2"></i>
+                            <span class="font-weight-bold small text-uppercase"> Tìm sinh viên xa trường nhất</span></a>
+
+
+                    </div>
+                </div>
+
+
+                <div class="col-md-9">
+                    <!-- Tabs content -->
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade shadow rounded bg-white show active p-5" id="v-pills-bai1"
+                            role="tabpanel" aria-labelledby="v-pills-bai1-tab">
+                            <h4 class="font-italic mb-4">📚 Xuất 3 số theo thứ tự tăng dần</h4>
+                            <div class="form-group row gy-3 align-items-center px-2">
+                                <div class="col-12 col-lg-4">
+                                    <label>Nhập số</label>
+                                    <input type="text" id="soThu1" class="form-control" placeholder="số thứ 1">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <label>Nhập số</label>
+                                    <input type="text" id="soThu2" class="form-control" placeholder="số thứ 2">
+                                </div>
+                                <div class="col-12 col-lg-4">
+                                    <label>Nhập số</label>
+                                    <input type="text" id="soThu3" class="form-control" placeholder="số thứ 3">
+                                </div>
+                            </div>
+                            <button id="btnSapXepSo" class="btn btn-success nutbam">Sắp xếp</button>
+                            <div id="showSapXepSo"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai2" role="tabpanel"
+                            aria-labelledby="v-pills-bai2-tab">
+                            <h4 class="font-italic mb-4">👋 Chương trình "Chào hỏi"</h4>
+                            <div class="form-group row gy-3 align-items-center px-2">
+                                <div class="form-group col-12 col-lg-4">
+                                    <select class="form-control" name="" id="selUser">
+                                        <option value="">Chọn thành viên</option>
+                                        <option value="B">Bố</option>
+                                        <option value="M">Mẹ</option>
+                                        <option value="A">Anh Trai</option>
+                                        <option value="E">Em Gái</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <button id="btnHello" class="btn btn-success nutbam">Gửi lời chào</button>
+                            <div id="showHello"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai3" role="tabpanel"
+                            aria-labelledby="v-pills-bai3-tab">
+                            <h4 class="font-italic mb-4">🧮 Đếm số chẵn lẻ</h4>
+                            <div class="form-group row gy-3 align-items-center px-2">
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="num1" class="form-control" placeholder="Nhập số thứ 1">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="num2" class="form-control" placeholder="Nhập số thứ 2">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="num3" class="form-control" placeholder="Nhập số thứ 3">
+                                </div>
+                            </div>
+                            <button id="btnDemSo" class="btn btn-success nutbam"> Đếm số</button>
+                            <div id="showChanLe"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai4" role="tabpanel"
+                            aria-labelledby="v-pills-bai4-tab">
+                            <h4 class="font-italic mb-4">🔮 Đoán hình tam giác</h4>
+                            <div class="form-group row gy-3 align-items-center px-2">
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="canh1" class="form-control" placeholder="Nhập độ dài cạnh 1">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="canh2" class="form-control" placeholder="Nhập độ dài cạnh 2">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="text" id="canh3" class="form-control" placeholder="Nhập độ dài cạnh 3">
+                                </div>
+                            </div>
+                            <button id="btnTinh" class="btn btn-success nutbam"> Đoán hình</button>
+                            <div id="showTamGiac"></div>
+                        </div>
+
+                        <div class="tab-pane fade shadow rounded bg-white p-5" id="v-pills-bai5" role="tabpanel"
+                            aria-labelledby="v-pills-bai5-tab">
+                            <h4 class="font-italic mb-4">📅 Tính ngày tháng năm</h4>
+                            <div class="form-group row gy-3 align-items-center px-2">
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="soNgay" class="form-control" placeholder="Nhập ngày">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="soThang" class="form-control" placeholder="Nhập tháng">
+                                </div>
+                                <div class=" col-12 col-lg-4">
+                                    <label></label>
+                                    <input type="number" id="soNam" class="form-control" placeholder="Nhập năm">
+                                </div>
+
+                                <div class="col-4 pt-4">
+                                    <button onclick="homQua()" class="btn btn-success nutbam">Ngày hôm qua</button>
+                                </div>
+                                <div class="col-4 pt-4">
+                                    <button onclick="ngayMai()" class="btn btn-success nutbam">Ngày mai</button>
+                                </div>
+                            </div>
+                            <div id="showDate"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="./bai1.js"></script>
+    <script src="./main.js"></script>
+
+</body>
+
+</html>
