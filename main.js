@@ -115,3 +115,118 @@ document.getElementById("btnTinh").onclick = function () {
 function tinhCanhGV(a, b) {
     var m = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
 }
+
+/**
+ * Tính ngày tháng năm
+ */
+function ngayMai() {
+    //Dau vao
+    var soNgay = +parseInt(document.getElementById("soNgay").value);
+    var soThang = +parseInt(document.getElementById("soThang").value);
+    var soNam = +parseInt(document.getElementById("soNam").value);
+    mai = "";
+    //Xu ly
+    switch (soThang) {
+        case 1: case 3: case 5: case 7: case 8: case 10:
+            if (soNgay > 0 && soNgay < 31) {
+                mai = (soNgay + 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 31) {
+                mai = "1/" + (soThang + 1) + "/" + soNam;
+            } else {
+                mai = "Ngày không hợp lệ"
+            }
+            break;
+        case 2:
+            if (soNgay > 0 && soNgay < 28) {
+                mai = (soNgay + 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 28) {
+                mai = "1/" + (soThang + 1) + "/" + soNam;
+            } else {
+                mai = "Ngày không hợp lệ"
+            }
+            break;
+        case 4: case 6: case 9: case 11:
+            if (soNgay > 0 && soNgay < 30) {
+                mai = (soNgay + 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 30) {
+                mai = "1/" + (soThang + 1) + "/" + soNam;
+            } else {
+                mai = "Ngày không hợp lệ";
+            }
+            break;
+        case 12:
+            if (soNgay > 0 && soNgay < 31) {
+                mai = (soNgay + 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 31) {
+                mai = "1/1/" + (soNam + 1);
+            } else {
+                mai = "Ngày không hợp lệ";
+            }
+            break;
+        default:
+            mai = "Tháng ko xác định";
+    }
+    //Dau ra
+    ketqua = "<br><p class='alert alert-success'>👉 Ngày " + mai + " </p>";
+    document.getElementById("showDate").innerHTML = ketqua;
+}
+function homQua() {
+    //Dau vao
+    var soNgay = document.getElementById("soNgay").value * 1;
+    var soThang = document.getElementById("soThang").value * 1;
+    var soNam = document.getElementById("soNam").value * 1;
+    qua = "";
+    //Xu ly
+    switch (soThang) {
+        case 1:
+            if (soNgay > 1 && soNgay <= 31) {
+                qua = (soNgay - 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 1) {
+                qua = "31/12/" + (soNam - 1);
+            } else {
+                qua = "Ngày không hợp lệ"
+            }
+            break;
+        case 2:
+            if (soNgay > 1 && soNgay <= 28) {
+                qua = (soNgay - 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 1) {
+                qua = "31/" + (soThang - 1) + "/" + soNam;
+            } else {
+                qua = "Ngày không hợp lệ";
+            }
+            break;
+        case 3:
+            if (soNgay > 1 && soNgay <= 28) {
+                qua = (soNgay - 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 1) {
+                qua = "28/" + (soThang - 1) + "/" + soNam;
+            } else {
+                qua = "Ngày không hợp lệ";
+            }
+            break;
+        case 4: case 6: case 9: case 1:
+            if (soNgay > 1 && soNgay <= 30) {
+                qua = (soNgay - 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 1) {
+                qua = "31/" + (soThang - 1) + "/" + soNam;
+            } else {
+                qua = "Ngày không hợp lệ";
+            }
+            break;
+        case 5: case 7: case 8: case 10: case 12:
+            if (soNgay > 1 && soNgay <= 31) {
+                qua = (soNgay - 1) + "/" + soThang + "/" + soNam;
+            } else if (soNgay == 1) {
+                qua = "30/" + (soThang - 1) + soNam;
+            } else {
+                qua = "Ngày không hợp lệ"
+            }
+            break;
+        default:
+            mai = "Tháng ko xác định"
+    }
+    //Dau ra
+    ketqua = "<br><p class='alert alert-success'>👉 Ngày " + qua + " </p>";
+    document.getElementById("showDate").innerHTML = ketqua;
+}

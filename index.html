@@ -158,24 +158,25 @@
                             <div class="form-group row gy-3 align-items-center px-2">
                                 <div class=" col-12 col-lg-4">
                                     <label></label>
-                                    <input type="text" id="num1" class="form-control" placeholder="Nhập số thứ 1">
+                                    <input type="number" id="soNgay" class="form-control" placeholder="Nhập ngày">
                                 </div>
                                 <div class=" col-12 col-lg-4">
                                     <label></label>
-                                    <input type="text" id="num2" class="form-control" placeholder="Nhập số thứ 2">
+                                    <input type="number" id="soThang" class="form-control" placeholder="Nhập tháng">
                                 </div>
                                 <div class=" col-12 col-lg-4">
                                     <label></label>
-                                    <input type="text" id="num3" class="form-control" placeholder="Nhập số thứ 3">
+                                    <input type="number" id="soNam" class="form-control" placeholder="Nhập năm">
+                                </div>
+
+                                <div class="col-4 pt-4">
+                                    <button onclick="homQua()" class="btn btn-success nutbam">Ngày hôm qua</button>
+                                </div>
+                                <div class="col-4 pt-4">
+                                    <button onclick="ngayMai()" class="btn btn-success nutbam">Ngày mai</button>
                                 </div>
                             </div>
-                            <div class="col-4">
-                                <button id="btnHomQua" class="btn btn-success nutbam">Ngày hôm qua</button>
-                            </div>
-                            <div class="col-4">
-                                <button id="btnMai" class="btn btn-success nutbam">Ngày mai</button>
-                            </div>
-                            <div id="showKySo"></div>
+                            <div id="showDate"></div>
                         </div>
                     </div>
                 </div>
